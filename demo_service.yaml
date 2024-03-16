@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app
+spec:
+  selector:
+    app: demo-app    # Selecting PODS with those Labels
+  ports:
+    - protocol  : TCP
+      port      : 8080  # Port on Load Balancer
+      targetPort: 8080  # Port on POD
+  type: LoadBalancer    
